@@ -5,6 +5,15 @@ const app = Vue.createApp({
       name: '',
     }
   },
+  computed: {
+    fullname() {
+      console.log('Running again..')
+      if (this.name === '') {
+        return ''
+      }
+      return this.name + ' ' + 'Pineda'
+    },
+  },
   methods: {
     add(num) {
       this.counter = this.counter + num
@@ -15,7 +24,6 @@ const app = Vue.createApp({
     setName(event) {
       this.name = event.target.value
     },
-
     resetInput() {
       this.name = ''
     },
